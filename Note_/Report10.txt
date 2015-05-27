@@ -1,0 +1,5 @@
+select *
+from FACT_DAILY_TRAFFIC fdt
+left join DIM_DATE dd on dd.date_Key = FDT.DATE_KEY
+where buddhist_fiscal_year = 2558
+and dd.fiscal_month_no = 3

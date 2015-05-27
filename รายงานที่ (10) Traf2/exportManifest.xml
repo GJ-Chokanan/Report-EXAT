@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="26-01-2015 02:57:29 ICT" exportBy="admin" rootFolder="/public/รายงาน/" manifestVersion="2"/>
+    <ExportManifestEntity path="ปริมาณการผ่านทาง.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="ปริมาณการผ่านทาง.prpt" createdDate="2015-01-15T10:21:28.097+07:00" isFolder="false" path="ปริมาณการผ่านทาง.prpt" isHidden="false" locale="en_US" title="รายงานปริมาณการผ่านทางพิเศษด้วยบัตรอัตโนมัติ (Easy Pass) จำแนกตามด่านเก็บค่าผ่านทางพิเศษ"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+</ns2:ExportManifest>

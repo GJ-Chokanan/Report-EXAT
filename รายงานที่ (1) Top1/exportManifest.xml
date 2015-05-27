@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="27-01-2015 10:49:35 ICT" exportBy="admin" rootFolder="/public/รายงาน/" manifestVersion="2"/>
+    <ExportManifestEntity path="Add-O2-3.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="Add-O2-3.prpt" createdDate="2015-01-20T18:31:38.383+07:00" isFolder="false" path="Add-O2-3.prpt" isHidden="false" locale="en_US" title="รายงานการจำหน่ายบัตรและรายได้แยกตามเจ้าของบัตรและสายทาง"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+</ns2:ExportManifest>

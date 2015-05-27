@@ -1,0 +1,49 @@
+------------ REPORT 1 -------------
+SELECT
+DP.HIGHWAY_SHORTNAME,
+DP.HIGHWAY_CODE,
+COALESCE(SUM(PZ1),0) AS ???????????,
+COALESCE(SUM(PZ2),0) AS ??????,
+COALESCE(SUM(PZ3),0) AS ???????,
+COALESCE(SUM(PZ5),0) AS ?????????,
+COALESCE(SUM(PZ4),0) AS ???????????
+
+FROM
+    (SELECT
+    Q.BUDDHIST_FISCAL_YEAR,
+    Q.HIGHWAY_CODE,
+    Q.HIGHWAY_SHORTNAME,
+    Q.sales_plaza_key,
+    CASE WHEN Q.HIGHWAY_CODE = 01 THEN SUM (Q.no_of_topup) END AS PZ1,
+    CASE WHEN Q.HIGHWAY_CODE = 02 THEN SUM (Q.no_of_topup) END AS PZ2,
+    CASE WHEN Q.HIGHWAY_CODE = 03 THEN SUM (Q.no_of_topup) END AS PZ3,
+    CASE WHEN Q.HIGHWAY_CODE = 06 THEN SUM (Q.no_of_topup) END AS PZ4,
+    CASE WHEN Q.HIGHWAY_CODE = 04 THEN SUM (Q.no_of_topup) END AS PZ5
+    FROM 
+            (SELECT
+            DD.BUDDHIST_FISCAL_YEAR,
+            DP.HIGHWAY_CODE,
+            DP.HIGHWAY_SHORTNAME,
+            ft.sales_plaza_key,
+            ft.no_of_topup
+            FROM
+            FACT_TOPUP FT,
+            DIM_DATE DD,
+            DIM_PLAZA DP
+            WHERE
+            FT.DATE_KEY = DD.DATE_KEY
+            AND FT.TOPUP_PLAZA_KEY = DP.PLAZA_KEY
+            AND DP.HIGHWAY_CODE != 99
+           
+            AND DD.FISCAL_MONTH_NO = 1
+            AND (DD.BUDDHIST_FISCAL_YEAR = 2558))Q
+    GROUP BY 
+    Q.BUDDHIST_FISCAL_YEAR,
+    Q.HIGHWAY_CODE,
+    Q.HIGHWAY_SHORTNAME,
+    Q.sales_plaza_key)QQ, DIM_PLAZA DP
+WHERE QQ.sales_plaza_key = DP.PLAZA_KEY  AND DP.HIGHWAY_CODE != 99
+GROUP BY
+DP.HIGHWAY_SHORTNAME,
+DP.HIGHWAY_CODE
+ORDER BY DP.HIGHWAY_CODE
